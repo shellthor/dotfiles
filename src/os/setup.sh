@@ -161,6 +161,7 @@ verify_os() {
     # it's above the required version.
 
     os_name="$(uname -s)"
+    os_uname="$(uname -r | cut -d '-' -f3)"
 
     if [ "$os_name" == "Darwin" ]; then
 
@@ -177,20 +178,26 @@ verify_os() {
     # Check if the OS is `Ubuntu` and
     # it's above the required version.
 
-    elif [ "$os_name" == "Linux" ] && [ -e "/etc/lsb-release" ]; then
-
-        os_uname="$(uname -r | cut -d '-' -f3)"
-        if [ "$os_uname" == "Microsoft" ]; then
-            os_name="Windows"
-        fi
+    elif [ "$os_name" == "Linux" ] && [ "os_uname" != "Microsoft" ] && [ -e "/etc/lsb-release" ]; then
 
         os_version="$(lsb_release -d | cut -f2 | cut -d' ' -f2)"
 
         if is_supported_version "$os_version" "$MINIMUM_UBUNTU_VERSION"; then
-            printf "Congratulations! You are running on $os_name"
             return 0
         else
             printf "Sorry, this script is intended only for Ubuntu %s+" "$MINIMUM_UBUNTU_VERSION"
+        fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    elif [ "$os_name" == "Linux" ] && [ "os_uname" == "Microsoft" ] && [ -e "/etc/lsb-release" ]; then
+
+        os_version="$(lsb_release -d | cut -f2 | cut -d' ' -f2)"
+
+        if is_supported_version "$os_version" "$MINIMUM_UBUNTU_VERSION"; then
+            return 0
+        else
+            printf "Sorry, this script is intended only for Ubuntu %s on Windows 10+" "$MINIMUM_UBUNTU_VERSION"
         fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
