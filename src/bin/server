@@ -1,19 +1,19 @@
 #!/bin/bash
 
 cmd_exists() {
-    command -v "$1" &> /dev/null
+  command -v "$1" &> /dev/null
 }
 
 open_url() {
 
-    # The order of the following checks matters as
-    # on Ubuntu there is also a utility called `open`.
+  # The order of the following checks matters as
+  # on Ubuntu there is also a utility called `open`.
 
-    if cmd_exists "xdg-open"; then
-        xdg-open "$1"
-    elif cmd_exists "open"; then
-        open "$1"
-    fi
+  if cmd_exists "xdg-open"; then
+      xdg-open "$1"
+  elif cmd_exists "open"; then
+      open "$1"
+  fi
 
 }
 
