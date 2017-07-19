@@ -178,7 +178,7 @@ verify_os() {
 
     elif [ "$os_name" == "Linux" ] && [ -e "/etc/lsb-release" ]; then
 
-        if ["$(uname -r | cut -d'-' -f3)" == "Microsoft"]; then
+        if [ "$(uname -r | cut -d '-' -f3)" == "Microsoft" ]; then
             os_name="Windows"
         fi
 
