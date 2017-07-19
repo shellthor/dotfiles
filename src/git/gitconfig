@@ -133,6 +133,7 @@
     # annotated tags when pushing branches out.
 
     followTags = true
+    default = simple
 
 [user]
 
