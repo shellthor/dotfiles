@@ -177,7 +177,7 @@ such as the `git` user credentials, e.g.:
 
     name = Jeff Detmer
     email = jeff.detmer@gmail.com
-    signingkey = 81284D282A1CC98B
+    signingkey = XXXX
 ```
 
 #### `~/.vimrc.local`
