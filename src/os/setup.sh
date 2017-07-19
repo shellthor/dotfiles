@@ -149,7 +149,7 @@ extract() {
 verify_os() {
 
     declare -r MINIMUM_MACOS_VERSION="10.10"
-    declare -r MINIMUM_UBUNTU_VERSION="16.10"
+    declare -r MINIMUM_UBUNTU_VERSION="16.04"
 
     local os_name=""
     local os_version=""
