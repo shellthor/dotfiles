@@ -66,7 +66,7 @@ if ! package_is_installed "opera"; then
 fi
 
 # Automatically answer `Yes` to the `package configuration` prompt.
-# https://github.com/alrra/dotfiles/issues/17
+# https://github.com/shellthor/dotfiles/issues/17
 
 printf "opera-stable opera-stable/add-deb-source boolean true\n" \
     | sudo debconf-set-selections
