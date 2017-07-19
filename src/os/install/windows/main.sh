@@ -14,9 +14,9 @@ upgrade
 
 ./compression_tools.sh
 ./git.sh
-./keybase.sh
 ./misc.sh
 ./misc_tools.sh
+./keybase.sh
 ./../npm.sh
 ./tmux.sh
 ./../vim.sh

@@ -7,3 +7,5 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 print_in_purple "\n   Miscellaneous\n\n"
+
+install_package "libappindicator1" "libappindicator1"
