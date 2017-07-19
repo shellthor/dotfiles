@@ -118,15 +118,19 @@ get_os() {
 
     local os=""
     local kernelName=""
+    local kernelRelease=""
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     kernelName="$(uname -s)"
+    kernelRelease="$(uname -r | cut -d '-' -f3)"
 
     if [ "$kernelName" == "Darwin" ]; then
         os="macos"
-    elif [ "$kernelName" == "Linux" ] && [ -e "/etc/lsb-release" ]; then
+    elif [ "$kernelName" == "Linux" ] && [ "$kernelRelease" != "Microsoft" ] && [ -e "/etc/lsb-release" ]; then
         os="ubuntu"
+    elif [ "$kernelName" == "Linux" ] && [ "$kernelRelease" == "Microsoft" ] && [ -e "/etc/lsb-release" ]; then
+        os="windows"
     else
         os="$kernelName"
     fi
