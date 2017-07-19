@@ -153,6 +153,7 @@ verify_os() {
 
     local os_name=""
     local os_version=""
+    local os_uname=""
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -178,7 +179,8 @@ verify_os() {
 
     elif [ "$os_name" == "Linux" ] && [ -e "/etc/lsb-release" ]; then
 
-        if [ "$(uname -r | cut -d '-' -f3)" == "Microsoft" ]; then
+        os_uname="$(uname -r | cut -d '-' -f3)"
+        if [ "$os_uname" == "Microsoft" ]; then
             os_name="Windows"
         fi
 
