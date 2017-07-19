@@ -178,7 +178,7 @@ verify_os() {
     # Check if the OS is `Ubuntu` and
     # it's above the required version.
 
-    elif [ "$os_name" == "Linux" ] && [ "os_uname" != "Microsoft" ] && [ -e "/etc/lsb-release" ]; then
+    elif [ "$os_name" == "Linux" ] && [ "$os_uname" != "Microsoft" ] && [ -e "/etc/lsb-release" ]; then
 
         os_version="$(lsb_release -d | cut -f2 | cut -d' ' -f2)"
 
@@ -190,7 +190,7 @@ verify_os() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    elif [ "$os_name" == "Linux" ] && [ "os_uname" == "Microsoft" ] && [ -e "/etc/lsb-release" ]; then
+    elif [ "$os_name" == "Linux" ] && [ "$os_uname" == "Microsoft" ] && [ -e "/etc/lsb-release" ]; then
 
         os_version="$(lsb_release -d | cut -f2 | cut -d' ' -f2)"
 
