@@ -4,7 +4,7 @@
 
 # Lock screen.
 
-alias afk="gnome-screensaver-command --lock"
+alias afk="echo I Wish I Could..."
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -45,4 +45,5 @@ alias o="xdg-open"
 alias u="sudo apt-get update \
             && sudo apt-get upgrade \
             && npm install -g npm \
-            && npm upgrade -g"
+            && npm upgrade -g \
+            && yarn global update"
