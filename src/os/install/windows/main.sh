@@ -11,7 +11,7 @@ upgrade
 
 ./build-essentials.sh
 ./../nvm.sh
-
+./browsers.sh
 ./compression_tools.sh
 ./git.sh
 ./python.sh
