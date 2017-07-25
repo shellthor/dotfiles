@@ -14,6 +14,7 @@ upgrade
 
 ./compression_tools.sh
 ./git.sh
+./python.sh
 ./misc.sh
 ./misc_tools.sh
 ./keybase.sh
