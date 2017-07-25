@@ -23,6 +23,11 @@ copy_public_ssh_key_to_clipboard () {
         pbcopy < "$1"
         print_result $? "Copy public SSH key to clipboard"
 
+    elif cmd_exists "clip.exe"; then
+
+        clip.exe < "$1"
+        print_result $? "Copy public SSH key to clipboard"
+
     elif cmd_exists "xclip"; then
 
         xclip -selection clip < "$1"
